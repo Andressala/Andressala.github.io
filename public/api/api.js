@@ -125,5 +125,25 @@ function allData() {
     //  YOUR CODE
     //  Get all data
     // -------------------------------------
+    var status  = document.getElementById('status');
+    var url = '/account/all';
+
+    superagent
+        .get(url)
+        .end(function(err, res){
+            if(err){
+                console.log(err);
+            }
+            else{
+                console.log(res.body);
+                status.innerHTML = JSON.stringify(res.body);
+            }
+
+        });
+
+
+
+
+
 };
 

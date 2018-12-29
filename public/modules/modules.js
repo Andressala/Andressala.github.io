@@ -299,13 +299,23 @@ ui.allData = `
     <p class="card-text">Show Database Information</p>
     <p class="card-text">(only maintenace)</p>
   
-  
-  <form>
-     <button type="submit" class="btn btn-dark" onclick="balance()">Show All Data</button>
-</form>
- 
-  </div>
+  <form>   
+     <button type="submit" class="btn btn-dark" onclick="allData()">Show All Data</button>
+  </form>
+ </div>
+ </div>
+
+<div class="card border-dark mb-3" style="max-width: 80rem;">
+    <div class="card-header">Bank Accounts Information (Confidential)</div>
+    <div class="card-body">
+        <form>
+             <div id="status">
+            </div>
+        </form>
+    </div>
+</div> 
 </div>
+
 
 <footer class="footer mt-auto py-3">
   <div class="container">

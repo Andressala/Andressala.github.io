@@ -134,6 +134,12 @@ app.get('/account/all', function (req, res) {
 
     // YOUR CODE
     // Return data for all accounts
+    var BankAccounts = db.get('accounts').value();
+     console.log('Bank Account Information...');
+     res.send(BankAccounts);
+     console.log(BankAccounts.body);
+     console.log('Done!');
+
 });
 
 // start server
