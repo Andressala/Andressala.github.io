@@ -46,11 +46,29 @@ app.get('/account/create/:name/:email/:password', function (req, res) {
         "password"     : req.params.password,
         "transactions" : [_.now(),'Creation',0]
     };
-          db.get('accounts').push(NewAccount).write();
-          //console.log(db.get('accounts').value());   
+
+    //Control if email is already used
+    var FindAccount =     db.get('accounts')
+                            .find({email: req.params.email})
+                            .value()
+    if(FindAccount==undefined){
+          db.get('accounts').push(NewAccount).write(); 
           res.send(NewAccount);
           console.log(NewAccount);
           console.log('...created');
+    }
+    else{
+          res.send(null);
+          console.log('Account creation unsuccessfull: E-mail already used');
+    }
+
+
+
+
+
+
+
+         
 
 
 
@@ -70,12 +88,12 @@ app.get('/account/login/:email/:password', function (req, res) {
                               .find({email: req.params.email} && {password: req.params.password})
                               .value()
     if(TargetAccount==undefined){
-        console.log('Account Error');
-        res.send('Account Error');  
+        console.log('Login Error');
+        res.send('Login Error');  
     }
     else{
+    res.send('Login Successful');
     console.log(TargetAccount);
-    res.send(TargetAccount);
     console.log('Done!');
     }
 });
@@ -94,7 +112,7 @@ app.get('/account/deposit/:email/:amount', function (req, res) {
     console.log('Deposit of',req.params.amount,'to account:',req.params.email,'...');
     db.get('accounts')
       .find({email: req.params.email})
-      .update('balance', b => b + Number(req.params.amount))
+      .update('balance', b => b + req.params.amount)
       .update('transactions', n => n.concat(_.now(),'Deposit',100))
       .write()
       

@@ -56,28 +56,32 @@ ui.createAccount = `
     <p class="card-text">Create an account</p>
   
   
-  <form>
-  <div class="form-group">
-    <label for="NameField">Name</label>
-    <input type="input" class="form-control" id="NameField" placeholder="Enter name">
-  </div>
+    <form>
+      <div class="form-group">
+      <label for="NameField">Name</label>
+      <input type="input" class="form-control" id="NameField" placeholder="Enter name">
+      </div>
   
-   <div class="form-group">
-    <label for="EmailField">Email</label>
-    <input type="email" class="form-control" id="EmailField" aria-describedby="EmailHelp" placeholder="Enter email">
-    <small id="EmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
+      <div class="form-group">
+      <label for="EmailField">Email</label>
+      <input type="email" class="form-control" id="EmailField" aria-describedby="EmailHelp" placeholder="Enter email">
+      <small id="EmailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
   
-  <div class="form-group">
-    <label for="PasswordField">Password</label>
-    <input type="password" class="form-control" id="PasswordField" placeholder="Password">
-  </div>
+      <div class="form-group">
+      <label for="PasswordField">Password</label>
+      <input type="password" class="form-control" id="PasswordField" placeholder="Password">
+      </div>
  
-     <button type="submit" class="btn btn-dark" onclick="create()">Create Account</button>
-</form>
+      <button type="submit" class="btn btn-dark" onclick="create()">Create Account</button>
+    </form>
+    <br>
+      <div id="status">
+      </div>
  
   </div>
-</div>
+  </div>
+
 
 <footer class="footer mt-auto py-3">
   <div class="container">
@@ -92,30 +96,34 @@ ui.createAccount = `
 
 ui.login = `
     <!-- ------------- YOUR CODE: Login UI ------------- --> 
-      <div class="card border-dark mb-3" style="width: 24rem;">
-  <div class="card-body">
-    <h5 class="card-title">BadBank Account Login</h5>
-    <p class="card-text">Access to your account</p>
+    <div class="card border-dark mb-3" style="width: 24rem;">
+    <div class="card-body">
+      <h5 class="card-title">BadBank Account Login</h5>
+      <p class="card-text">Access to your account</p>
   
   
-  <form>
+      <form>
   
-   <div class="form-group">
-    <label for="EmailField">Email</label>
-    <input type="email" class="form-control" id="EmailField" aria-describedby="EmailHelp" placeholder="Enter email">
-    <small id="EmailHelp" class="form-text text-muted">Account email.</small>
-  </div>
+       <div class="form-group">
+          <label for="EmailField">Email</label>
+          <input type="email" class="form-control" id="EmailField" aria-describedby="EmailHelp" placeholder="Enter email">
+         <small id="EmailHelp" class="form-text text-muted">Account email.</small>
+       </div>
   
-  <div class="form-group">
-    <label for="PasswordField">Password</label>
-    <input type="password" class="form-control" id="PasswordField" placeholder="Password">
-  </div>
+       <div class="form-group">
+         <label for="PasswordField">Password</label>
+         <input type="password" class="form-control" id="PasswordField" placeholder="Password">
+       </div>
  
-     <button type="submit" class="btn btn-dark" onclick="login()">Login</button>
-</form>
- 
-  </div>
-</div>
+        <button type="submit" class="btn btn-dark" onclick="login()">Login</button>
+      </form>
+      <br>
+      <div id="status">
+      </div>
+
+
+    </div>
+    </div>
 
 <footer class="footer mt-auto py-3">
   <div class="container">
@@ -144,15 +152,18 @@ ui.deposit = `
   
   <div class="form-group">
     <label for="DepositField">Deposit</label>
-    <input type="text" class="form-control" id="DepositField" aria-describedby="DepositHelp" placeholder="Deposit">
+    <input type="number" min="0" class="form-control" id="DepositField" aria-describedby="DepositHelp" placeholder="Deposit">
     <small id="DepositHelp" class="form-text text-muted">Deposit amount.</small>
   </div>
  
      <button type="submit" class="btn btn-dark" onclick="deposit()">Deposit</button>
 </form>
  
+   <div id="status">
+   </div>
+
   </div>
-</div>
+  </div>
 
 <footer class="footer mt-auto py-3">
   <div class="container">
@@ -297,7 +308,6 @@ ui.allData = `
   <div class="card-body">
     <h5 class="card-title">BadBank Database</h5>
     <p class="card-text">Show Database Information</p>
-    <p class="card-text">(only maintenace)</p>
   
   <form>   
      <button type="submit" class="btn btn-dark" onclick="allData()">Show All Data</button>
@@ -305,15 +315,17 @@ ui.allData = `
  </div>
  </div>
 
-<div class="card border-dark mb-3" style="max-width: 80rem;">
-    <div class="card-header">Bank Accounts Information (Confidential)</div>
+<div class="card border-danger mb-3" style="max-width: 80rem;">
+    <div class="card-header">Bank Accounts Information </div>
+    <div class="card-body text-danger">
+    <h5 class="card-title">(Confidential)</h5>
+    </div>
     <div class="card-body">
         <form>
              <div id="status">
             </div>
         </form>
     </div>
-</div> 
 </div>
 
 

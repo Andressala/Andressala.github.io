@@ -5,6 +5,7 @@ function create() {
     //  YOUR CODE
     //  Create user account on server
     // -------------------------------------    
+    var status  = document.getElementById('status');
     var name2add = document.getElementById('NameField').value;
     var email2add = document.getElementById('EmailField').value;
     var password2add = document.getElementById('PasswordField').value;
@@ -13,15 +14,21 @@ function create() {
     superagent
         .get(url)
         .end(function(err, res){
+
             if(err){
                 console.log(err);
                 console.log('Account creation error');
-            }
-            else{
-                console.log(res);
-                console.log('Account Created');
-                status.innerHTML = JSON.stringify('Account Created');
-            }
+                status.innerHTML = JSON.stringify('Account Creation Error');
+                }
+                else if(res.text==""){
+                    console.log('Account creation unsuccessfull: E-mail already used');
+                    status.innerHTML = JSON.stringify('Account error: E-mail already used');  
+                }
+                else{
+                    console.log(res);
+                    console.log('Account Created');
+                    status.innerHTML = JSON.stringify('Account Created');    
+                }  
         });
 };
 
@@ -32,6 +39,7 @@ function login() {
     //  YOUR CODE
     //  Confirm credentials on server
     // -------------------------------------
+    var status  = document.getElementById('status');
     var email2log = document.getElementById('EmailField').value;
     var password2log = document.getElementById('PasswordField').value;
     var url = '/account/login/' + email2log + '/' + password2log;
@@ -42,14 +50,13 @@ function login() {
             if(err){
                 console.log(err);
                 console.log('Account login error');
+                status.innerHTML = JSON.stringify('Login Error');
             }
             else{
-                status.innerHTML = JSON.stringify(res);
+                status.innerHTML = JSON.stringify(res.text);
                 console.log(res);
             }
         });
-
-
 
 };
 
