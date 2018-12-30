@@ -112,13 +112,17 @@ app.get('/account/deposit/:email/:amount', function (req, res) {
     console.log('Deposit of',req.params.amount,'to account:',req.params.email,'...');
     db.get('accounts')
       .find({email: req.params.email})
-      .update('balance', b => b + req.params.amount)
+      .update('balance', b => b + Number(req.params.amount))
       .update('transactions', n => n.concat(_.now(),'Deposit',100))
       .write()
       
-          res.send('success');
+          res.send('Deposit operation successful');
           console.log('Success');
+var data = db.get('accounts')
+              .find({email: req.params.email})
+              .value()
 
+         // res.send('25');
 
 
 });

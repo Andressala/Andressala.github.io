@@ -3,12 +3,39 @@
     {
       "name": "Andres",
       "email": "Andres@gmail.com",
-      "balance": 0,
+      "balance": 673,
       "password": "Saöa",
       "transactions": [
         1546120387402,
         "Creation",
-        0
+        0,
+        1546128116986,
+        "Deposit",
+        100,
+        1546128136141,
+        "Deposit",
+        100,
+        1546128139328,
+        "Deposit",
+        100,
+        1546128398513,
+        "Deposit",
+        100,
+        1546128542597,
+        "Deposit",
+        100,
+        1546128655514,
+        "Deposit",
+        100,
+        1546128733112,
+        "Deposit",
+        100,
+        1546128796033,
+        "Deposit",
+        100,
+        1546128841335,
+        "Deposit",
+        100
       ]
     },
     {
@@ -25,12 +52,15 @@
     {
       "name": "Paco",
       "email": "Paco@gmail.com",
-      "balance": 0,
+      "balance": "01000",
       "password": "Pascualword",
       "transactions": [
         1546120415447,
         "Creation",
-        0
+        0,
+        1546127920659,
+        "Deposit",
+        100
       ]
     },
     {
@@ -80,12 +110,24 @@
     {
       "name": "Nueva",
       "email": "Nueva@gmail.com",
-      "balance": 0,
+      "balance": "0100010002020",
       "password": "Nuevacard",
       "transactions": [
         1546124262478,
         "Creation",
-        0
+        0,
+        1546127633076,
+        "Deposit",
+        100,
+        1546127638514,
+        "Deposit",
+        100,
+        1546127818048,
+        "Deposit",
+        100,
+        1546127820264,
+        "Deposit",
+        100
       ]
     },
     {

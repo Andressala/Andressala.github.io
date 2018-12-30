@@ -65,23 +65,27 @@ function deposit() {
     //  YOUR CODE
     //  Deposit funds user funds on server
     // -------------------------------------
-
+    var status  = document.getElementById('status');
+    var balance  = document.getElementById('balance');
     var email2dep = document.getElementById('EmailField').value;
     var amount2dep = document.getElementById('DepositField').value;
     var url = '/account/deposit/' + email2dep + '/' + amount2dep;
 
     superagent
         .get(url)
-        .end(function(err, res){
+        .end(function(err, res, total){
             if(err){
                 console.log(err);
                 console.log('Account deposit error');
             }
             else{
                 console.log(res);
-                status.innerHTML = JSON.stringify(res);
+                status.innerHTML = JSON.stringify(res.text);
                 console.log('Account deposit correct');
             }
+
+                balance.innerHTML = JSON.stringify('25');
+
         });
 
 

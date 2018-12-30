@@ -158,12 +158,24 @@ ui.deposit = `
  
      <button type="submit" class="btn btn-dark" onclick="deposit()">Deposit</button>
 </form>
- 
-   <div id="status">
-   </div>
+   <br>
+      <div id="status">
+      </div>
+
 
   </div>
   </div>
+
+<div class="card border-dark bg-light mb-3" style="max-width: 24rem;">
+  <div class="card-header">Account Balance</div>
+  <div class="card-body">
+    
+    <div id="balance">
+   </div>
+
+  </div>
+</div>
+
 
 <footer class="footer mt-auto py-3">
   <div class="container">
@@ -201,7 +213,21 @@ ui.withdraw = `
  
      <button type="submit" class="btn btn-dark" onclick="withdraw()">Withdraw</button>
 </form>
- 
+   <br>
+      <div id="status">
+      </div>
+
+
+  </div>
+  </div>
+
+<div class="card border-dark bg-light mb-3" style="max-width: 24rem;">
+  <div class="card-header">Account Balance</div>
+  <div class="card-body">
+    
+    <div id="balance">
+   </div>
+
   </div>
 </div>
 
@@ -267,7 +293,21 @@ ui.balance = `
  
      <button type="submit" class="btn btn-dark" onclick="balance()">Show Balance</button>
 </form>
- 
+   <br>
+      <div id="status">
+      </div>
+
+
+  </div>
+  </div>
+
+<div class="card border-dark bg-light mb-3" style="max-width: 24rem;">
+  <div class="card-header">Account Balance</div>
+  <div class="card-body">
+    
+    <div id="balance">
+   </div>
+
   </div>
 </div>
 
